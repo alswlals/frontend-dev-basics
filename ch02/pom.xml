@@ -6,10 +6,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ch02</artifactId>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	
 	<build>
-		<finalName>ch02</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -27,4 +26,8 @@
 			</plugin>
 		</plugins>
 	</build>
+		
+	<modules>
+		<module>ch02</module>
+	</modules>
 </project>
