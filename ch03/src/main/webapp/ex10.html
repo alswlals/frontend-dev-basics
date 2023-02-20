@@ -4,15 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>float를 이용한 메뉴</title>
 <style type="text/css">
+*{padding:0; margin:0}
+body{font-family:'Apple SD 산돌고딕 Neo','맑은 고딕', '돋움'; font-size:12px; color:#333;}
 ul.nothing {
-	font-size: 12px;
-	color: #333;
-	list-style: none;
+	width:500px;
+	border:1px solid #ccc;
+	margin:100px auto;
+	float:right;
+	list-style-type: none;
 }
 
 ul.nothing li {
+	width:50px;
+	border:1px solid #555;
 	font-weight: bold;
 	margin: 5px;
+	text-align:center;
+	margin-right:10px;
+	float:left;
+}
+ul.nothing li:first-child{
+	margin-right:0px
 }
 </style>
 </head>

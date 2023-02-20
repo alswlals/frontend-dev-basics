@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* { margin:0; padding:0 }
+body {
+	font-family: "맑은 고딕", 돋움;
+	font-size: 12px;
+	color: #333;
+}
+
+.header {
+	margin: 50px auto;
+    position: relative;
+    width: 1130px;
+    height: 100%;
+    padding: 0 30px;
+}
+
+.header .logo, .header .search-box {
+	float: left;
+}
+
+.header .logo {
+	width: 222px;
+	height: 52px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/sp_main_dba1af.png') no-repeat 0 -158px / 450px 428px; 
+}
+
+.search-box a, .search-box input, .search-box .btn-search button {
+	display: block;
+	position: absolute;
+}
+.search-box{
+position: relative;
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-left: 20px;
+}
+.btn-search button{
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 56px;
+    background-color: #19ce60;
+    -webkit-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    border: 0;
+}
+
+#i {
+	width: 444px;
+    height: 24px;
+    padding: 13px 15px;
+    margin: 1px;
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 700;
+    outline: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+#dropdown {
+    top: 0;
+    right: 64px;
+    bottom: 0;
+    width: 22px;
+    color: inherit;
+    text-decoration: none;
+}
+
+#keyboard{
+	position: absolute;
+    top: 0;
+    right: 84px;
+    bottom: 0;
+    width: 36px;
+    z-index: 400;
+    color: inherit;
+    text-decoration: none;
+}
+
+.dropdown_icon {
+	position: absolute;
+	display: inline-block;
+    width: 10px;
+    height: 7px;
+    background: url('/ch03/images/sp_main_dba1af.png') no-repeat -395px -76px / 442px 428px;
+    top: 50%;
+    left: 50%;
+}
+
+
+
+.keyboard_icon{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    margin: -6px 0 0 -10px;
+    background: url('/ch03/images/sp_main_dba1af.png') no-repeat -405px -376px / 442px 428px;
+}
+
+.ico_search_submit {
+	display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+	background: url('/ch03/images/sp_main_dba1af.png') no-repeat -405px 1px / 442px 428px;
+}
+
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 class="logo">네이버</h1>
+		<div class="search-box">
+			<div class="btn-search">
+				<button><span class="ico_search_submit"></span></button>
+			</div>
+			<a id="dropdown" href="#"><span class="dropdown_icon"></span></a>
+			<a id="keyboard" href="#"><span class="keyboard_icon"></span></a>
+			<input id="i" type="text" />
+		</div>
+	</div>
+</body>
+</html>
