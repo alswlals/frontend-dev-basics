@@ -17,6 +17,7 @@
  *          Array()   => object 타입의 객체
  *          Date()    => object 타입의 객체
  *          RegExp()  => object 타입의 객체
+ *          Function()=> function 타입의 객체 **
  *      2. {}
  *      3. []
  *      4. null
@@ -44,18 +45,39 @@ var o = new Object();
 var a = new Array();
 var d = new Date();
 
-console.log(i2 + ":" + typeof(i2));
-console.log(s2 + ":" + typeof(s2));
-console.log(b2 + ":" + typeof(b2));
-console.log(o + ":" + typeof(o));
-console.log(a + ":" + typeof(a));
-console.log(d + ":" + typeof(d));
+var o2 = {};
+var a2 = [];
+var n = null;
 
-console.log(typeof(Number));
+console.log(i2 + " : " + typeof(i2) + " : " + (i2 instanceof(Number)));
+console.log(s2 + " : " + typeof(s2) + " : " + (s2 instanceof(String)));
+console.log(b2 + " : " + typeof(b2) + " : " + (b2 instanceof(Boolean)));
+console.log(o + " : " + typeof(o) + " : " + (o instanceof(Object)));
+console.log(a + " : " + typeof(a) + " : " + (a instanceof(Array)));
+console.log(d + " : " + typeof(d) + " : " + (d instanceof(Date)));
 
+console.log(o2 + " : " + typeof(o2) + " : " + (o2 instanceof(Object)));
+console.log(a2 + " : " + typeof(a2)+ " : " + (a2 instanceof(Array)));
 
-function Student(name){
-    // console.log(name);
-    this.name - name;
+console.log(n + " : " + typeof(n));
+
+console.log("=== 객체 타입 (function) ===")
+function f1(a, b){
+    return a+b;
 }
-Student("둘리");
+
+var f2 = function(a, b){
+    return a + b;
+}
+
+var f3 = new Function("a","b", "return a + b");
+
+console.log(f1(10,20), f2(10, 20), f3(10, 20));
+console.log("f1: " + typeof(f1));
+console.log("f2: " + typeof(f2));
+console.log("f3: " + typeof(f3));
+
+
+console.log("=== 원시 타입도 메소듣를 호출할 수 있다.(유사 객체) ===")
+console.log(b2.valueOf());
+console.log(b.valueOf()); /* new Boolean(b).valueOf()*/
