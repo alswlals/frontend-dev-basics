@@ -31,3 +31,6 @@ console.log("====================");
 */
 
 console.log('4'===4);
+console.log(1===ture);
+console.log('abc'===new St);
+
