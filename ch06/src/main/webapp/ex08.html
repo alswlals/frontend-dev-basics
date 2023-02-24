@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.onload = function(){
+	setTimeout(function(){
+		var imgElement = document.createElement('img');
+		imgElement.src = 'https://mblogthumb-phinf.pstatic.net/data29/2008/2/14/291/hoyul9_nalssinan.jpg?type=w800';
+		imgElement.style.width='200px';
+		imgElement.alt = '농놀';
+		imgElement.title = '농놀ㄱ';
+		imgElement['data-no'] = 10;
+		document.body.appendChild(imgElement);	
+	}, 2000);
+}
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
