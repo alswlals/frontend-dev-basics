@@ -6,23 +6,21 @@
 <script>
 $(function(){
 	var $obj = $(".par");
+	
+	console.log(typeof(jQuery), typeof($obj), "length:" + $obj.length, $obj instanceof Array, $obj instanceof Object);
+	
 	$obj.click(function(){
 		console.log("clicked:" + this);
 	});
-
+	
 	setTimeout(function(){
 		$obj.css('color', 'red');
-	}, 2000);
-
-	setTimeout(function(){
-		$("p").css('font-weight', 'bold');
-	}, 4000);
-
+	}, 2000); 
 });
 </script>
 </head>
 <body>
-	<h1 id="header">Simple jQuery 만들기2</h1>
+	<h1 id="header">Simple jQuery 만들기2 - jquery-simple.js </h1>
 	
 	<p class='par'>문장1</p>
 	<p>문장2</p>
