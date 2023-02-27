@@ -5,6 +5,7 @@ imageViewer = {
 		$(function(){
 			$('#btn-change').click(_this._changeImage.bind(_this));
 			$('.image-viewer img').click(_this._changeImage.bind(_this));
+			$('#btn-slideshow').click(_this._slideShow.bind(_this));
 			
 			_this._changeImage();
 		});
@@ -12,7 +13,7 @@ imageViewer = {
 	
 	_changeImage:function(){
 		var index = Math.floor(Math.random()*this._images.length);
-		console.log(index);
+		// console.log(index);
 		var info = this._images[index];
 		
 		$('.image-viewer img').attr({
@@ -20,6 +21,23 @@ imageViewer = {
 			alt: info.name,
 			title: info.name
 		})
+	},
+	
+	_slideShow:function(){
+		if(this._intervalId){
+			
+			clearInterval(this._intervalId);
+			this._intervalId = null;
+			
+			$("#btn-slideshow").text("슬라이드쇼 시작");
+			
+		} else{
+			var _this = this;
+			_this._intervalId = setInterval(function(){
+				_this._changeImage();
+			}, 1000);
+			$("#btn-slideshow").text("슬라이드쇼 중지");
+		}
 	},
 	
 	intervalId:null,
