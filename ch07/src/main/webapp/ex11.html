@@ -6,6 +6,8 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$('#second + li').css('color', 'red');
+		$('#second + li + li').css('color', 'blue');
 	}, 1000);
 });
 </script>
@@ -15,8 +17,8 @@ $(function(){
 	<ul>
 		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
 		<li id="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
-		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
-		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>  <!--  red : 얘가선택됨 -->
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>	<!--  blue : 얘가선택됨 -->
 	</ul>
 </body>
 </html>
