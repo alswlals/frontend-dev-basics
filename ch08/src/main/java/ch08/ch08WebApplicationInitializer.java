@@ -1,15 +1,12 @@
 package ch08;
 
 import javax.servlet.Filter;
-
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class MySiteWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
+public class Ch08WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		/* Root Application Context's Configuration Class */
 		return new Class<?>[] {};
 	}
 
@@ -21,12 +18,10 @@ public class MySiteWebApplicationInitializer extends AbstractAnnotationConfigDis
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] {"/"};
-		
 	}
 
 	@Override
 	protected Filter[] getServletFilters() {
 		return new Filter[] {new CharacterEncodingFilter("UTF-8", false)};
 	}
-
 }

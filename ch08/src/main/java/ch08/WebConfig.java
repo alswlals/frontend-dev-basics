@@ -22,9 +22,8 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({ "ch08.controller" })
+@ComponentScan({"ch08.controller"})
 public class WebConfig implements WebMvcConfigurer {
-	/* View Resolver */
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -33,25 +32,31 @@ public class WebConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
-
-	/* Message Converter */
+	
 	@Bean
 	public StringHttpMessageConverter stringHttpMessageConverter() {
 		StringHttpMessageConverter messageConverter = new StringHttpMessageConverter();
-
-		messageConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "html", Charset.forName("utf-8"))));
-
+		messageConverter.setSupportedMediaTypes(
+			Arrays.asList(
+				new MediaType("text", "html", Charset.forName("utf-8"))
+			)
+		);
 		return messageConverter;
 	}
-
+	
 	@Bean
 	public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
-		Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder().indentOutput(true)
-				.dateFormat(new SimpleDateFormat("yyyy-mm-dd"));
-
+		Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder()
+			.indentOutput(true)
+			.dateFormat(new SimpleDateFormat("yyyy-mm-dd"));
+		
 		MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter(builder.build());
-		messageConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "html", Charset.forName("utf-8"))));
-
+		messageConverter.setSupportedMediaTypes(
+			Arrays.asList(
+				new MediaType("application", "json", Charset.forName("utf-8"))
+			)
+		);
+		
 		return messageConverter;
 	}
 
@@ -61,10 +66,8 @@ public class WebConfig implements WebMvcConfigurer {
 		converters.add(mappingJackson2HttpMessageConverter());
 	}
 
-	/* Default Servlet Handler */
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
-	}
-
+	}	
 }
