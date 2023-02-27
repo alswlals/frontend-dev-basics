@@ -1,16 +1,25 @@
 imageViewer = {
 	
-
 	init: function() {
-		for(var i = 0; i < 100; i++){
-			this._changeImage()
-		}
-		// $(imageViewer._initialize)
+		var _this = this; 
+		$(function(){
+			$('#btn-change').click(_this._changeImage.bind(_this));
+			$('.image-viewer img').click(_this._changeImage.bind(_this));
+			
+			_this._changeImage();
+		});
 	},
 	
 	_changeImage:function(){
 		var index = Math.floor(Math.random()*this._images.length);
 		console.log(index);
+		var info = this._images[index];
+		
+		$('.image-viewer img').attr({
+			src: "images/" + info.file,
+			alt: info.name,
+			title: info.name
+		})
 	},
 	
 	intervalId:null,
