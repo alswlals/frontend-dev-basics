@@ -15,5 +15,3 @@ const StyledDiv = div`
     font-size:2 0px;
     font-weight: bold;
 `;
-
-f`hello world`;
